@@ -3,9 +3,59 @@ table{
     margin-bottom: 20px;
 }
 
-td,th{
-    border: 1px solid black;
-    width: 50px;
-    height: 50px;
+td,tr{
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
     text-align: center;
+}
+
+button{
+    display: block;
+    padding: 10px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.container{
+    width: 100%;
+    height: 100vh ;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registrar_container{
+    display: flex;
+    width: 650px;
+    height: auto;
+    background-color: aliceblue;
+}
+
+.registrar{
+    padding: 40px;
+}
+
+.registrar h1{
+    text-align: center;
+}
+
+.registrar input{
+    width: 100%;
+    padding:5px;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.juego h1{
+    text-align: center;
+}
+
+.tableros{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 400px;
+    padding-right: 400px;
 }
