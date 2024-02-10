@@ -1,3 +1,5 @@
+let turnos = 0;
+
 
 function getRandomNumber() {
     return Math.floor(Math.random() * 50)+1 ;
@@ -21,7 +23,8 @@ function generarTablero(tableroId,size){
 function sacarNumero(){
     let numero = getRandomNumber();
     window.alert("El numero que salio es: " + numero);
-
+    turnos++
+    terminarTurnos();
     let tableros = document.getElementsByClassName("tableros")
 
     for (let index = 0; index < 4; index++) {
@@ -30,16 +33,18 @@ function sacarNumero(){
         for (let j = 0; j < cuadrito.length; j++) {
             if (parseInt(cuadrito[j].innerText)===numero) {
                 cuadrito[j].classList.add("encontrado")
-                
             }
-            
         }
-        
     }
-
+    
 }
     
-
+function terminarTurnos(){
+    if (turnos === 26) {
+        location.reload();
+        window.alert("Se acabo el juego")
+    }
+}
 
 function registrarDatos(){
     
