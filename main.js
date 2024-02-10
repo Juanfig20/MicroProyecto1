@@ -29,7 +29,7 @@ function sacarNumero(){
 
         for (let j = 0; j < cuadrito.length; j++) {
             if (parseInt(cuadrito[j].innerText)===numero) {
-                cuadrito[j].classList.add("colored")
+                cuadrito[j].classList.add("encontrado")
                 
             }
             
@@ -41,7 +41,7 @@ function sacarNumero(){
     
 
 
-function registrarNombres(){
+function registrarDatos(){
     
         let jugador = document.getElementById("Nombre1").value;
         document.getElementById("Jugador1").innerText = jugador
@@ -60,7 +60,48 @@ function registrarNombres(){
     
 }
 
+function iniciarJuego(){
+    document.getElementById("container").style.display="none";
+    document.getElementById("juego").style.display="block";
+}
 
+function mostrarTablero1(){
+    document.getElementById("tablero1").style.display="block";
+    document.getElementById("tablero2").style.display="none";
+    document.getElementById("tablero3").style.display="none";
+    document.getElementById("tablero4").style.display="none";
+}
+
+function mostrarTablero2(){
+    document.getElementById("tablero1").style.display="none";
+    document.getElementById("tablero2").style.display="block";
+    document.getElementById("tablero3").style.display="none";
+    document.getElementById("tablero4").style.display="none";
+}
+
+function mostrarTablero3(){
+    document.getElementById("tablero1").style.display="none";
+    document.getElementById("tablero2").style.display="none";
+    document.getElementById("tablero3").style.display="block";
+    document.getElementById("tablero4").style.display="none";
+}
+
+function mostrarTablero4(){
+    document.getElementById("tablero1").style.display="none";
+    document.getElementById("tablero2").style.display="none";
+    document.getElementById("tablero3").style.display="none";
+    document.getElementById("tablero4").style.display="block";
+}
+
+function main(){
+    registrarDatos();
+    iniciarJuego();
+    
+}
+
+function recargar(){
+    location.reload();
+}
 
 
 

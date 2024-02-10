@@ -17,7 +17,7 @@ button{
     margin: 0 auto;
 }
 
-.container{
+#container{
     width: 100%;
     height: 1080px ;
     padding: 10px;
@@ -48,7 +48,7 @@ button{
     margin-bottom: 25px;
 }
 
-.juego h1{
+#juego h1{
     text-align: center;
 }
 
@@ -60,10 +60,11 @@ button{
     padding-right: 400px;
 }
 
-td.colored {
-    background-color: blue;
+td.encontrado {
+    background-color: white;
 }
 
 div{
     background-color: beige;
 }
+

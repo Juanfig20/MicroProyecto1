@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
+    <div id="container">
       <div class="registrar_container">
         <div class="registrar">
           <h1>Registrar Jugadores</h1>
@@ -22,27 +22,37 @@
               placeholder="Ingrese 3,4 o 5 para el tamaño NxN del tablero"
             />
           </form>
-          <button id="jugar" onclick="registrarNombres()">Jugar</button>
+          <button id="jugar" onclick="main()">Jugar</button>
         </div>
       </div>
     </div>
-    <div class="juego">
+    <div id="juego" style="display: none">
       <h1>BINGO</h1>
       <div class="tableros">
-        <h2 id="Jugador1">Tablero1</h2>
-        <table id="Tab1"></table>
-
-        <h2 id="Jugador2">Tablero2</h2>
-        <table id="Tab2"></table>
-
-        <h2 id="Jugador3">Tablero3</h2>
-        <table id="Tab3"></table>
-
-        <h2 id="Jugador4">Tablero4</h2>
-        <table id="Tab4"></table>
+        <div class="tablero" id="tablero1">
+          <h2 id="Jugador1">Tablero1</h2>
+          <table id="Tab1"></table>
+          <button onclick="mostrarTablero2()">Ver Jugador 2</button>
+        </div>
+        <div class="tablero" id="tablero2" style="display: none">
+          <h2 id="Jugador2">Tablero2</h2>
+          <table id="Tab2"></table>
+          <button onclick="mostrarTablero3()">Ver Jugador 3</button>
+        </div>
+        <div class="tablero" id="tablero3" style="display: none">
+          <h2 id="Jugador3">Tablero3</h2>
+          <table id="Tab3"></table>
+          <button onclick="mostrarTablero4()">Ver Jugador 4</button>
+        </div>
+        <div class="tablero" id="tablero4" style="display: none">
+          <h2 id="Jugador4">Tablero4</h2>
+          <table id="Tab4"></table>
+          <button onclick="mostrarTablero1()">Ver Jugador 1</button>
+        </div>
       </div>
 
       <button id="num" onclick="sacarNumero()">Sacar Numero</button>
+      <button id="reload" onclick="recargar()">Reiniciar juego</button>
     </div>
 
     <script src="./main.js"></script>
