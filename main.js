@@ -20,15 +20,29 @@ function generarTablero(tableroId,size){
 
 function sacarNumero(){
     let numero = getRandomNumber();
+    window.alert("El numero que salio es: " + numero);
+
+    let tableros = document.getElementsByClassName("tableros")
+
+    for (let index = 0; index < 4; index++) {
+        let cuadrito= tableros[index].getElementsByTagName("td");
+
+        for (let j = 0; j < cuadrito.length; j++) {
+            if (parseInt(cuadrito[j].innerText)===numero) {
+                cuadrito[j].classList.add("colored")
+                
+            }
+            
+        }
+        
+    }
+
 }
-    let numero = getRandomNumber();
+    
 
 
 function registrarNombres(){
-    if (document.getElementById('Nombre1').innerText == null) {
-        alert("Ingrese los nombres");
-        
-    }else{
+    
         let jugador = document.getElementById("Nombre1").value;
         document.getElementById("Jugador1").innerText = jugador
         let jugador2 = document.getElementById("Nombre2").value;
@@ -42,9 +56,10 @@ function registrarNombres(){
         generarTablero("Tab2",num);
         generarTablero("Tab3",num);
         generarTablero("Tab4",num);
-    }
+    
     
 }
+
 
 
 
