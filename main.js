@@ -1,7 +1,7 @@
 let turnos = 0;
-
-
-function getRandomNumber() {
+let score = [0,0,0,0];
+let numeros = [];
+function randomNumber() {
     return Math.floor(Math.random() * 50)+1 ;
 }
 
@@ -11,7 +11,7 @@ function generarTablero(tableroId,size){
         const element = document.createElement("tr");
         for (let j = 0; j < size; j++) {
             const element2 = document.createElement("td") ;
-            element2.textContent = getRandomNumber();
+            element2.textContent = randomNumber();
             element.appendChild(element2);
             
         }
@@ -21,10 +21,12 @@ function generarTablero(tableroId,size){
 }
 
 function sacarNumero(){
-    let numero = getRandomNumber();
-    window.alert("El numero que salio es: " + numero);
     turnos++
+    document.getElementById("turno").innerText = turnos.toString();
+    let numero = randomNumber();
+    window.alert("El numero que salio es: " + numero);
     terminarTurnos();
+
     let tableros = document.getElementsByClassName("tableros")
 
     for (let index = 0; index < 4; index++) {
@@ -33,6 +35,7 @@ function sacarNumero(){
         for (let j = 0; j < cuadrito.length; j++) {
             if (parseInt(cuadrito[j].innerText)===numero) {
                 cuadrito[j].classList.add("encontrado")
+                
             }
         }
     }
@@ -40,14 +43,14 @@ function sacarNumero(){
 }
     
 function terminarTurnos(){
-    if (turnos === 26) {
+    if (turnos === 25) {
         location.reload();
         window.alert("Se acabo el juego")
     }
 }
 
 function registrarDatos(){
-    
+        validarNombres();
         let jugador = document.getElementById("Nombre1").value;
         document.getElementById("Jugador1").innerText = jugador
         let jugador2 = document.getElementById("Nombre2").value;
@@ -109,5 +112,19 @@ function recargar(){
 }
 
 
-
+function validarNombres(){
+    if (document.getElementById("Nombre1").value.length === 0) {
+        window.alert("Rellene todos los campos para continuar")
+        location.reload();     
+    }else if (document.getElementById("Nombre2").value.length === 0) {
+        window.alert("Rellene todos los campos para continuar")
+        location.reload();
+    }else if (document.getElementById("Nombre3").value.length === 0) {
+        window.alert("Rellene todos los campos para continuar")
+        location.reload();
+    }else if (document.getElementById("Nombre4").value.length === 0) {
+        window.alert("Rellene todos los campos para continuar")
+        location.reload();
+    }
+}
 
